@@ -1,59 +1,337 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SmartWallet
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-12-red)
+![PHP](https://img.shields.io/badge/PHP-8.3-blue)
+![Vue](https://img.shields.io/badge/Vue-3-green)
+![Inertia](https://img.shields.io/badge/Inertia.js-SPA-purple)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-## About Laravel
+> Personal finance dashboard built with Laravel, Vue and Chart.js.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# 🇧🇷 Português
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Sobre o Projeto
 
-## Learning Laravel
+**SmartWallet** é uma aplicação web de **gestão financeira pessoal** que permite aos usuários registrar receitas, despesas e visualizar sua situação financeira através de **gráficos e dashboards interativos**.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+O objetivo do projeto é fornecer uma ferramenta simples para controle financeiro enquanto aplica **boas práticas de desenvolvimento full stack com PHP e também conta com consumo de API**.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Preview da Aplicação
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<img src="docs/dashboard.png" width="800">
 
-### Premium Partners
+*(em construção...)*
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## Tecnologias Utilizadas
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Backend
+- PHP
+- Laravel
 
-## Code of Conduct
+### Frontend
+- Inertia.js
+- Vue.js
+- TailwindCSS
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Banco de Dados
+- MySQL
 
-## Security Vulnerabilities
+### Visualização de Dados
+- Chart.js
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Arquitetura da Aplicação
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+A aplicação segue o padrão **MVC (Model-View-Controller)** utilizando Laravel.
+
+```
+app/
+ ├── Models
+ ├── Http
+ │   ├── Controllers
+ │   └── Requests
+ ├── Services
+ └── Policies
+
+resources/
+ ├── js
+ │   ├── Pages
+ │   ├── Components
+ │   └── Layouts
+ └── css
+
+routes/
+ ├── web.php
+ └── auth.php
+```
+
+---
+
+## Funcionalidades
+
+- Cadastro e autenticação de usuários
+- Registro de receitas
+- Registro de despesas
+- Dashboard financeiro
+- Visualização de gráficos
+- Histórico de transações
+- Filtro por datas
+
+---
+
+## Dashboard
+
+O dashboard apresentará:
+
+- Saldo atual
+- Total de receitas
+- Total de despesas
+- Gráfico de despesas por categoria
+- Evolução financeira ao longo do tempo
+
+Os gráficos serão construídos com **Chart.js**.
+
+---
+
+## Instalação
+
+Clone o repositório
+
+```bash
+git clone git@github.com:seu-usuario/smartwallet.git
+```
+
+Entre na pasta
+
+```bash
+cd smartwallet
+```
+
+Instale as dependências do backend
+
+```bash
+composer install
+```
+
+Instale as dependências do frontend
+
+```bash
+npm install
+```
+
+Crie o arquivo de ambiente
+
+```bash
+cp .env.example .env
+```
+
+Configure o banco de dados no `.env`.
+
+Execute as migrations
+
+```bash
+php artisan migrate
+```
+
+Gere a chave da aplicação
+
+```bash
+php artisan key:generate
+```
+
+Inicie o servidor
+
+```bash
+php artisan serve
+```
+
+Execute o Vite
+
+```bash
+npm run dev
+```
+
+---
+
+## Objetivo do Projeto
+
+Este projeto faz parte do meu processo de evolução como **desenvolvedor backend PHP**, aplicando conceitos reais de:
+
+- arquitetura de software
+- modelagem de banco de dados
+- desenvolvimento full stack
+- visualização de dados
+- consumo de API
+
+---
+
+# 🇺🇸 English
+
+## About the Project
+
+**SmartWallet** is a **personal finance management web application** that allows users to record income and expenses and visualize their financial situation through **interactive charts and dashboards**.
+
+The goal of the project is to provide a simple financial management tool while applying **full stack development best practices with PHP and also integrating API consumption**.
+
+---
+
+## Application Preview
+
+<img src="docs/dashboard.png" width="800">
+
+*(under construction...)*
+
+---
+
+## Technologies Used
+
+### Backend
+- PHP
+- Laravel
+
+### Frontend
+- Inertia.js
+- Vue.js
+- TailwindCSS
+
+### Database
+- MySQL
+
+### Data Visualization
+- Chart.js
+
+---
+
+## Application Architecture
+
+The application follows the **MVC (Model-View-Controller)** pattern using Laravel.
+
+```
+app/
+ ├── Models
+ ├── Http
+ │   ├── Controllers
+ │   └── Requests
+ ├── Services
+ └── Policies
+
+resources/
+ ├── js
+ │   ├── Pages
+ │   ├── Components
+ │   └── Layouts
+ └── css
+
+routes/
+ ├── web.php
+ └── auth.php
+```
+
+---
+
+## Features
+
+- User registration and authentication
+- Income tracking
+- Expense tracking
+- Financial dashboard
+- Chart visualization
+- Transaction history
+- Date filtering
+
+---
+
+## Dashboard
+
+The dashboard will display:
+
+- Current balance
+- Total income
+- Total expenses
+- Expense chart by category
+- Financial evolution over time
+
+The charts will be built using **Chart.js**.
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone git@github.com:your-username/smartwallet.git
+```
+
+Enter the project directory
+
+```bash
+cd smartwallet
+```
+
+Install backend dependencies
+
+```bash
+composer install
+```
+
+Install frontend dependencies
+
+```bash
+npm install
+```
+
+Create the environment file
+
+```bash
+cp .env.example .env
+```
+
+Configure the database in the `.env` file.
+
+Run the migrations
+
+```bash
+php artisan migrate
+```
+
+Generate the application key
+
+```bash
+php artisan key:generate
+```
+
+Start the server
+
+```bash
+php artisan serve
+```
+
+Run Vite
+
+```bash
+npm run dev
+```
+
+---
+
+## Project Goal
+
+This project is part of my journey to become a **PHP backend developer**, applying real-world concepts such as:
+
+- software architecture
+- database modeling
+- full stack development
+- data visualization
+- API consumption
+
+---
+
+This project is open-source and available under the **MIT License**.
